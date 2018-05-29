@@ -1,0 +1,28 @@
+Question count <strong>: <%= Question.all.count %></strong><br>
+Answers count <strong>:  <%= Answer.all.count %><br></strong>
+Users count <strong>: <%= User.all.count %> <br></strong>
+
+<hr>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>api_key</th>
+      <th>request count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Tenant.all.each do |t| %>
+      <tr>
+        <td><%= t.id %>
+          
+        </td>
+
+        <td><%= t.api_key %></td>
+        <td><%= t.request_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
